@@ -17,7 +17,7 @@
 2.安装node.js1$ brew install node
 3.安装hexo1$ npm install -g hexo
 坑点处12$ hexo g &amp;amp;&amp;amp">
-<meta property="og:updated_time" content="2015-11-12T06:16:01.000Z">
+<meta property="og:updated_time" content="2015-11-12T07:52:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建hexo遇到过得坑">
 <meta name="twitter:description" content="简述安装的主要步骤1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
@@ -106,7 +106,7 @@
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="/#" title="github">github</a>
+								<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 					        
 								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
 					        
@@ -172,7 +172,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/#" title="github">github</a>
+						<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 			        
 						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
 			        
@@ -229,7 +229,7 @@
 <h3 id="3-安装hexo">3.安装hexo</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
 <h2 id="坑点处"><strong><em>坑点处</em></strong></h2><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &amp;&amp; hexo d<span class="preprocessor"> #始终失败</span></span><br><span class="line"><span class="built_in">error</span>: <span class="built_in">ERROR</span> Deployer <span class="keyword">not</span> found: git</span><br></pre></td></tr></table></figure>
 <p>查了网上资料需要先安装deploy插件执行以下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
-<p>但是发现没办法安装，猜测是墙的原因，于是修改registry:</p>
+<p>但是发现没办法安装，猜测是墙的原因，于是修改registry:<br><a id="more"></a></p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="keyword">set</span> <span class="keyword">registry</span>=<span class="string">"http://r.cnpmjs.org"</span></span><br></pre></td></tr></table></figure>
 <p>并且使用sudo权限重新安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
 <p>终于成功安装deploy插件<br>继续<br>执行：hexo g &amp;&amp; hexo d<br>成功部署到github</p>
