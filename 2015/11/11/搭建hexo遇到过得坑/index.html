@@ -35,7 +35,7 @@
 
 &amp;lt;!--tocstop--&amp;gt;
 简述安装的主要步骤1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste">
-<meta property="og:updated_time" content="2015-11-12T09:12:51.000Z">
+<meta property="og:updated_time" content="2015-11-12T09:17:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建hexo遇到过得坑">
 <meta name="twitter:description" content="&amp;lt;!--toc--&amp;gt;
@@ -253,13 +253,13 @@
       
         <!--toc-->
 <ul>
-<li>1.简述安装的主要步骤<ul>
+<li>1.<a href="#mou1">简述安装的主要步骤</a><ul>
 <li>1.1安装homebrew</li>
 <li>1.2安装node.js</li>
 <li>1.3安装hexo</li>
 </ul>
 </li>
-<li>2.踏过的坑点</li>
+<li>2.<a href="#mou2">踏过的坑点</a></li>
 <li>3.<a href="#mou3">解析到自定义域名</a></li>
 </ul>
 <!--tocstop-->
@@ -274,8 +274,8 @@
 <p>终于成功安装deploy插件<br>继续<br>执行：hexo g &amp;&amp; hexo d<br>成功部署到github</p>
 <h4 id="备注"><strong><em>备注</em></strong></h4><p>此处还可能出现一个错误，当xcode更新后Application的Xcode.app的名字被更改，如：Xcode5.app;<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">xcrun: <span class="keyword">error</span>: active developer path (<span class="string">"/Users/apple/Desktop/Xcode5.app/Contents/Developer"</span>) <span class="keyword">does</span> <span class="keyword">not</span> exist ...</span><br></pre></td></tr></table></figure></p>
 <p>原因是git命令时找不到路径，解决方法：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select -<span class="keyword">switch</span> <span class="regexp">/Applications/</span>Xcode5.app<span class="regexp">/Contents/</span>Developer</span><br></pre></td></tr></table></figure></p>
-<p>注：上面的xcode5.app根据情况，因为我的xcode安装之后，改了名字叫xcode5所以这里是，xcodee5.app如果你没有攺，就是xcode.app</p>
-<h2 id="解析到自定义域名"><strong><em>解析到自定义域名</em></strong></h2><p><a name="mou3"><br>推荐用DSNPod<br>先到购买域名的服务商去修改dns为DNSPod的对应DNS（这步很重要）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1: f1g1ns1<span class="class">.dnspod</span><span class="class">.net</span>  </span><br><span class="line">DNS2: f1g1ns2<span class="class">.dnspod</span><span class="class">.net</span></span><br></pre></td></tr></table></figure></a></p>
+<p>注：上面的xcode5.app根据情况，因为我的xcode安装之后，改了名字叫xcode5所以这里是，xcodee5.app如果你没有攺，就是xcode.app<br><a name="mou3">## <strong><em>解析到自定义域名</em></strong><a></a></a></p>
+<p>推荐用DSNPod<br>先到购买域名的服务商去修改dns为DNSPod的对应DNS（这步很重要）<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1: f1g1ns1<span class="class">.dnspod</span><span class="class">.net</span>  </span><br><span class="line">DNS2: f1g1ns2<span class="class">.dnspod</span><span class="class">.net</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="一级域名：">一级域名：</h3><p>在dnspod控制台，设置主机记录@，类型A，到IP 192.30.252.153。</p>
 <h3 id="二级域名：">二级域名：</h3><p>在dnspod控制台，我们要做3步设置:<br>1.设置主机记录github，类型A，到IP 199.27.76.133<br>2.设置主机记录yourname.github.io，类型CNAME，到github.yourname.com.<br>3.设置主机记录blog，类型CNAME，到 yourname.github.io</p>
 <p><strong><em>最后需要注意的是：DNS修改后不会马上生效，需要做的就是耐心等待</em></strong></p>
