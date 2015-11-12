@@ -6,27 +6,27 @@
   <title>搭建hexo遇到过得坑 | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="##安装的主要步骤
-###1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-###2.安装node.js1brew install node
-###3.安装hexo1npm install -g hexo
-##坑点处12$ hexo g &amp;">
+###1.安装homebrew1$ ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
+2.安装node.js1brew install node
+3.安装hexo1npm install -g hexo
+坑点处12$ hexo g &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建hexo遇到过得坑">
 <meta property="og:url" content="http://blog.yinuolu.com/2015/11/11/搭建hexo遇到过得坑/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
 <meta property="og:description" content="##安装的主要步骤
-###1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-###2.安装node.js1brew install node
-###3.安装hexo1npm install -g hexo
-##坑点处12$ hexo g &amp;">
-<meta property="og:updated_time" content="2015-11-12T03:44:37.000Z">
+###1.安装homebrew1$ ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
+2.安装node.js1brew install node
+3.安装hexo1npm install -g hexo
+坑点处12$ hexo g &amp;">
+<meta property="og:updated_time" content="2015-11-12T05:14:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建hexo遇到过得坑">
 <meta name="twitter:description" content="##安装的主要步骤
-###1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-###2.安装node.js1brew install node
-###3.安装hexo1npm install -g hexo
-##坑点处12$ hexo g &amp;">
+###1.安装homebrew1$ ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34;
+2.安装node.js1brew install node
+3.安装hexo1npm install -g hexo
+坑点处12$ hexo g &amp;">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
@@ -103,10 +103,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>##安装的主要步骤</p>
-<p>###1.安装homebrew<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
-<p>###2.安装node.js<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>install node</span><br></pre></td></tr></table></figure></p>
-<p>###3.安装hexo<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure></p>
-<p>##坑点处<br><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &amp;&amp; hexo d<span class="preprocessor"> #始终失败</span></span><br><span class="line"><span class="built_in">error</span>: <span class="built_in">ERROR</span> Deployer <span class="keyword">not</span> found: git</span><br></pre></td></tr></table></figure></p>
+<p>###1.安装homebrew<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -e &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&#34;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-安装node-js">2.安装node.js</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">brew </span>install node</span><br></pre></td></tr></table></figure>
+<h3 id="3-安装hexo">3.安装hexo</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
+<h2 id="坑点处">坑点处</h2><figure class="highlight monkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g &amp;&amp; hexo d<span class="preprocessor"> #始终失败</span></span><br><span class="line"><span class="built_in">error</span>: <span class="built_in">ERROR</span> Deployer <span class="keyword">not</span> found: git</span><br></pre></td></tr></table></figure>
 <p>查了网上资料需要先安装deploy插件执行以下命令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
 <p>但是发现没办法安装，猜测是墙的原因，于是修改registry:</p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="keyword">set</span> <span class="keyword">registry</span>=<span class="string">"http://r.cnpmjs.org"</span></span><br></pre></td></tr></table></figure>
@@ -119,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yinuolu.com/2015/11/11/搭建hexo遇到过得坑/" data-id="cigvozhoo0000uoop9xtaywhf" class="article-share-link">Share</a>
+      <a data-url="http://blog.yinuolu.com/2015/11/11/搭建hexo遇到过得坑/" data-id="cigvs78v600002iop6bh6hgrf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我/">我</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
