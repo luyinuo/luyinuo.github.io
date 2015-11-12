@@ -6,18 +6,18 @@
   <title>开发者证书个人理解 | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在苹果开发中避免不了的要和开发者账号打交道，在XCode7.0之前要在真机进行测试，打包到应用商店，消息推送等都会用到开发者证书。一开始接触苹果严密的证书申请流程难免都会觉得晦涩难懂，经过多次证书制作后才能慢慢明白其中每个步骤的意义。总结如下几个关键步骤得理解，方便以后复习。
-* 1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中e">
+1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中ema">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发者证书个人理解">
 <meta property="og:url" content="http://blog.yinuolu.com/2015/11/12/开发者证书个人理解/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
 <meta property="og:description" content="在苹果开发中避免不了的要和开发者账号打交道，在XCode7.0之前要在真机进行测试，打包到应用商店，消息推送等都会用到开发者证书。一开始接触苹果严密的证书申请流程难免都会觉得晦涩难懂，经过多次证书制作后才能慢慢明白其中每个步骤的意义。总结如下几个关键步骤得理解，方便以后复习。
-* 1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中e">
-<meta property="og:updated_time" content="2015-11-12T14:14:44.000Z">
+1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中ema">
+<meta property="og:updated_time" content="2015-11-12T14:19:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发者证书个人理解">
 <meta name="twitter:description" content="在苹果开发中避免不了的要和开发者账号打交道，在XCode7.0之前要在真机进行测试，打包到应用商店，消息推送等都会用到开发者证书。一开始接触苹果严密的证书申请流程难免都会觉得晦涩难懂，经过多次证书制作后才能慢慢明白其中每个步骤的意义。总结如下几个关键步骤得理解，方便以后复习。
-* 1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中e">
+1.创建certificate文件需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件其中ema">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
@@ -230,11 +230,34 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在苹果开发中避免不了的要和开发者账号打交道，在XCode7.0之前要在真机进行测试，打包到应用商店，消息推送等都会用到开发者证书。一开始接触苹果严密的证书申请流程难免都会觉得晦涩难懂，经过多次证书制作后才能慢慢明白其中每个步骤的意义。总结如下几个关键步骤得理解，方便以后复习。</p>
-<h3 id="*_1-创建certificate文件">* 1.创建certificate文件</h3><p>需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件<br>其中email address 和common name 可以随意填写，因为是保存到磁盘而不是通过邮件发送</p>
-<h3 id="*_2-安装根证书">* 2.安装根证书</h3><p>在开发者中心下载，文件名为:AppleWWDRCA.cer<a id="more"></a><br>双击后xcode自动安装</p>
-<h3 id="*_3-请求开发者证书">* 3.请求开发者证书</h3><p>生成证书时会选择一个CRS文件，即第一步生成密钥对的同时生成的文件。<br>生成后下载下来备用</p>
-<h3 id="*_4-创建Identifier">* 4.创建Identifier</h3><p>即创建应用bundle id 对应的app id ,如果是给所有的应用都可以做真机调试，可以用通配符*<br>创建的app id 在后面的创建Provisioning Profiles 会选择到。</p>
-<h3 id="*_5-添加自己的设备uuid">* 5.添加自己的设备uuid</h3><h3 id="*_6-创建Provisioning_Profiles">* 6.创建Provisioning Profiles</h3><p>选择Development 或Distribution 创建规定文档，用于安装到手机上标示在哪台电脑对应的哪个app在哪台手机上做真机调试。<br>如果想创建的证书在多台电脑上共有，需要到处keychain中证书栏对应的证书下得私钥文件为p12文件，同时下载cer和provisioning Profiles共三个文件。安装到需要调试的电脑上，一切工作到此结束。</p>
+<h3 id="1-创建certificate文件"><em>1.创建certificate文件</em></h3><p>需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件<br>其中email address 和common name 可以随意填写，因为是保存到磁盘而不是通过邮件发送</p>
+<h3 id="2-安装根证书"><em>2.安装根证书</em></h3><p>在开发者中心下载，文件名为:AppleWWDRCA.cer<a id="more"></a><br>双击后xcode自动安装</p>
+<h3 id="3-请求开发者证书"><em>3.请求开发者证书</em></h3><p>生成证书时会选择一个CRS文件，即第一步生成密钥对的同时生成的文件。<br>生成后下载下来备用</p>
+<h3 id="4-创建Identifier"><em>4.创建Identifier</em></h3><p>即创建应用bundle id 对应的app id ,如果是给所有的应用都可以做真机调试，可以用通配符*<br>创建的app id 在后面的创建Provisioning Profiles 会选择到。</p>
+<h3 id="5-添加自己的设备uuid"><em>5.添加自己的设备uuid</em></h3><h3 id="6-创建Provisioning_Profiles"><em>6.创建Provisioning Profiles</em></h3><p>选择Development 或Distribution 创建规定文档，用于安装到手机上标示在哪台电脑对应的哪个app在哪台手机上做真机调试。<br>如果想创建的证书在多台电脑上共有，需要到处keychain中证书栏对应的证书下得私钥文件为p12文件，同时下载cer和provisioning Profiles共三个文件。安装到需要调试的电脑上，一切工作到此结束。</p>
+<table>
+<thead>
+<tr>
+<th>hello</th>
+<th>world</th>
+<th>oc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello</td>
+<td>world</td>
+<td>java</td>
+<td></td>
+</tr>
+<tr>
+<td>hello</td>
+<td>heel</td>
+<td>java</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
