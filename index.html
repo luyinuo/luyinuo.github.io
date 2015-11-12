@@ -100,14 +100,14 @@
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="keyword">set</span> <span class="keyword">registry</span>=<span class="string">"http://r.cnpmjs.org"</span></span><br></pre></td></tr></table></figure>
 <p>并且使用sudo权限重新安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
 <p>终于成功安装deploy插件<br>继续<br>执行：hexo g &amp;&amp; hexo d<br>成功部署到github</p>
-<p>###备注<br>此处还可能出现一个错误，当xcode更新后Application的Xcode.app的名字被更改，如：Xcode5.app;<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">xcrun: <span class="keyword">error</span>: active developer path (<span class="string">"/Users/apple/Desktop/Xcode5.app/Contents/Developer"</span>) <span class="keyword">does</span> <span class="keyword">not</span> exist ...</span><br></pre></td></tr></table></figure></p>
+<h3 id="备注"><strong><em>备注</em></strong></h3><p>此处还可能出现一个错误，当xcode更新后Application的Xcode.app的名字被更改，如：Xcode5.app;<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">xcrun: <span class="keyword">error</span>: active developer path (<span class="string">"/Users/apple/Desktop/Xcode5.app/Contents/Developer"</span>) <span class="keyword">does</span> <span class="keyword">not</span> exist ...</span><br></pre></td></tr></table></figure></p>
 <p>原因是git命令时找不到路径，解决方法：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select -<span class="keyword">switch</span> <span class="regexp">/Applications/</span>Xcode5.app<span class="regexp">/Contents/</span>Developer</span><br></pre></td></tr></table></figure></p>
 <p>注：上面的xcode5.app根据情况，因为我的xcode安装之后，改了名字叫xcode5所以这里是，xcodee5.app如果你没有攺，就是xcode.app</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yinuolu.com/2015/11/11/搭建hexo遇到过得坑/" data-id="cigvsb69z00003xopknh4vrj2" class="article-share-link">Share</a>
+      <a data-url="http://blog.yinuolu.com/2015/11/11/搭建hexo遇到过得坑/" data-id="cigvshxkc00005eope6d75nww" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开始/">开始</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我/">我</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
@@ -154,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.yinuolu.com/2015/11/11/hello-world/" data-id="cigvsb6az00093xoppcv3tcdv" class="article-share-link">Share</a>
+      <a data-url="http://blog.yinuolu.com/2015/11/11/hello-world/" data-id="cigvshxlb00095eopkjvozrzx" class="article-share-link">Share</a>
       
       
     </footer>
