@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -189,6 +189,69 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-OC计算字节长度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/12/OC计算字节长度/" class="article-date">
+  	<time datetime="2015-11-12T13:28:40.000Z" itemprop="datePublished">2015-11-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/12/OC计算字节长度/">OC计算字节长度</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="对于文本框的输入字数限制">对于文本框的输入字数限制</h2><p>`<br>-(NSUInteger) unicodeLengthOfString: (NSString *) text {<br>    NSUInteger asciiLength = 0;</p>
+<pre><code><span class="keyword">for</span> (NSUInteger <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; text.<span class="built_in">length</span>; <span class="built_in">i</span>++) <span class="cell">{
+
+    unichar uc = [text characterAtIndex: i];
+
+    asciiLength += isascii(uc) ? <span class="number">1</span> : <span class="number">2</span>;
+}</span>
+<span class="keyword">return</span> asciiLength;
+</code></pre><p>}<br>`</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-OpenSSl简介-记录笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
