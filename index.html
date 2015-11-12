@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -190,6 +190,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-开发者证书个人理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/12/开发者证书个人理解/" class="article-date">
+  	<time datetime="2015-11-12T14:01:11.000Z" itemprop="datePublished">2015-11-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/12/开发者证书个人理解/">开发者证书个人理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在苹果开发中避免不了的要和开发者账号打交道，在XCode7.0之前要在真机进行测试，打包到应用商店，消息推送等都会用到开发者证书。一开始接触苹果严密的证书申请流程难免都会觉得晦涩难懂，经过多次证书制作后才能慢慢明白其中每个步骤的意义。总结如下几个关键步骤得理解，方便以后复习。</p>
+<h3 id="1-创建certificate文件">1.创建certificate文件</h3><p>需要先在电脑的keychain中请求带有公钥和私钥对的密钥。同时生成CRS文件<br>其中email address 和common name 可以随意填写，因为是保存到磁盘而不是通过邮件发送</p>
+<h3 id="2-安装根证书">2.安装根证书</h3><p>在开发者中心下载，文件名为:AppleWWDRCA.cer<br>双击后xcode自动安装</p>
+<h3 id="3-请求开发者证书">3.请求开发者证书</h3><p>生成证书时会选择一个CRS文件，即第一步生成密钥对的同时生成的文件。<br>生成后下载下来备用</p>
+<h3 id="4-创建Identifier">4.创建Identifier</h3><p>即创建应用bundle id 对应的app id ,如果是给所有的应用都可以做真机调试，可以用通配符*<br>创建的app id 在后面的创建Provisioning Profiles 会选择到。</p>
+<h3 id="5-添加自己的设备uuid">5.添加自己的设备uuid</h3><h3 id="6-创建Provisioning_Profiles">6.创建Provisioning Profiles</h3><p>选择Development 或Distribution 创建规定文档，用于安装到手机上标示在那台电脑对应的那个app在哪台手机上做真机调试。<br>如果想创建的证书在多台电脑上共有，需要到处keychain中证书栏对应的证书下得私钥文件为p12文件，同时下载cer和provisioning Profiles共三个文件。安装到需要调试的电脑上，一切工作到此结束。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-OC计算字节长度" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -216,7 +276,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="对于文本框的输入字数限制">对于文本框的输入字数限制</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSUInteger) unicodeLengthOfString: (NSString *) text &#123;&#10;    NSUInteger asciiLength = 0;&#10;&#10;    for (NSUInteger i = 0; i &#60; text.length; i++) &#123;&#10;&#10;        unichar uc = [text characterAtIndex: i];&#10;&#10;        asciiLength += isascii(uc) ? 1 : 2;&#10;    &#125;&#10;    return asciiLength;&#10;&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="对于文本框的输入字数限制">对于文本框的输入字数限制</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">NSUInteger</span>) unicodeLengthOfString: (<span class="built_in">NSString</span> *) text &#123;</span><br><span class="line">    <span class="built_in">NSUInteger</span> asciiLength = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">NSUInteger</span> i = <span class="number">0</span>; i &lt; text<span class="variable">.length</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">unichar</span> uc = [text characterAtIndex: i];</span><br><span class="line"></span><br><span class="line">        asciiLength += isascii(uc) ? <span class="number">1</span> : <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> asciiLength;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
