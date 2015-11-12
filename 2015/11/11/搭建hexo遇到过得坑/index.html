@@ -17,7 +17,7 @@
 2.安装node.js1$ brew install node
 3.安装hexo1$ npm install -g hexo
 坑点处12$ hexo g &amp;amp;&amp;amp">
-<meta property="og:updated_time" content="2015-11-12T08:00:18.000Z">
+<meta property="og:updated_time" content="2015-11-12T08:02:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建hexo遇到过得坑">
 <meta name="twitter:description" content="简述安装的主要步骤1.安装homebrew1$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
@@ -232,6 +232,7 @@
 <p>但是发现没办法安装，猜测是墙的原因，于是修改registry:</p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm config <span class="keyword">set</span> <span class="keyword">registry</span>=<span class="string">"http://r.cnpmjs.org"</span></span><br></pre></td></tr></table></figure>
 <p>并且使用sudo权限重新安装：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
+<!-- toc -->
 <p>终于成功安装deploy插件<br>继续<br>执行：hexo g &amp;&amp; hexo d<br>成功部署到github</p>
 <h3 id="备注"><strong><em>备注</em></strong></h3><p>此处还可能出现一个错误，当xcode更新后Application的Xcode.app的名字被更改，如：Xcode5.app;<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">xcrun: <span class="keyword">error</span>: active developer path (<span class="string">"/Users/apple/Desktop/Xcode5.app/Contents/Developer"</span>) <span class="keyword">does</span> <span class="keyword">not</span> exist ...</span><br></pre></td></tr></table></figure></p>
 <p>原因是git命令时找不到路径，解决方法：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xcode-select -<span class="keyword">switch</span> <span class="regexp">/Applications/</span>Xcode5.app<span class="regexp">/Contents/</span>Developer</span><br></pre></td></tr></table></figure></p>
