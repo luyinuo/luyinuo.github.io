@@ -216,15 +216,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="对于文本框的输入字数限制">对于文本框的输入字数限制</h2><p>`<br>-(NSUInteger) unicodeLengthOfString: (NSString *) text {<br>    NSUInteger asciiLength = 0;</p>
-<pre><code><span class="keyword">for</span> (NSUInteger <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; text.<span class="built_in">length</span>; <span class="built_in">i</span>++) <span class="cell">{
-
-    unichar uc = [text characterAtIndex: i];
-
-    asciiLength += isascii(uc) ? <span class="number">1</span> : <span class="number">2</span>;
-}</span>
-<span class="keyword">return</span> asciiLength;
-</code></pre><p>}<br>`</p>
+        <h2 id="对于文本框的输入字数限制">对于文本框的输入字数限制</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSUInteger) unicodeLengthOfString: (NSString *) text &#123;&#10;    NSUInteger asciiLength = 0;&#10;&#10;    for (NSUInteger i = 0; i &#60; text.length; i++) &#123;&#10;&#10;        unichar uc = [text characterAtIndex: i];&#10;&#10;        asciiLength += isascii(uc) ? 1 : 2;&#10;    &#125;&#10;    return asciiLength;&#10;&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
