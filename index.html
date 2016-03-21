@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -189,6 +189,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-note-one-for-optional-in-swift" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/21/note-one-for-optional-in-swift/" class="article-date">
+  	<time datetime="2016-03-21T13:03:11.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/note-one-for-optional-in-swift/">Swift语言学习笔记一(可选类型? 和隐式可选类型!)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###可选类型、隐式可选类型<br>在Swift 中可选类型是一个枚举类型(Enum),里面有None和非None两种类型，nil对应于Optional.None;非nil对应于Optional.Some(Wrapped),通过Some(Wrapped) 包装原始值，这也是为什么在使用Optional的时候要拆包（从Enum中的Some取出原始值）的原因，同理在PlayGround中会把Optional值显示为类似{Some”Hello World”}，以下是Enum Optional的定义<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public enum <span class="constant">Optional&lt;Wrapped&gt;</span> <span class="symbol">:</span> <span class="constant">_Reflectable,</span> <span class="constant">NilLiteralConvertible </span>&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="constant">None</span></span><br><span class="line"><span class="keyword">case</span> <span class="constant">Some(Wrapped)</span></span><br><span class="line">/<span class="regexp">//</span> <span class="constant">Construct </span>a `<span class="keyword">nil</span>` instance.</span><br><span class="line">public init()</span><br><span class="line">/<span class="regexp">//</span> <span class="constant">Construct </span>a non-`<span class="keyword">nil</span>` instance that stores `some`.</span><br><span class="line">public init(<span class="constant">_ </span><span class="symbol">some:</span> <span class="constant">Wrapped)</span></span><br><span class="line">/<span class="regexp">//</span> <span class="constant">If </span>`<span class="keyword">self</span> == <span class="keyword">nil</span>`, returns `<span class="keyword">nil</span>`.  <span class="constant">Otherwise,</span> returns `f(<span class="keyword">self</span>!)`.</span><br><span class="line"><span class="variable">@warn_unused_result</span></span><br><span class="line"><span class="variable">@rethrows</span> public func map&lt;<span class="constant">U&gt;</span>(<span class="variable">@noescape</span> <span class="symbol">f:</span> (<span class="constant">Wrapped)</span> throws -&gt; <span class="constant">U)</span> rethrows -&gt; <span class="constant">U?</span></span><br><span class="line">/<span class="regexp">//</span> <span class="constant">Returns </span>`<span class="keyword">nil</span>` if `<span class="keyword">self</span>` is <span class="keyword">nil</span>, `f(<span class="keyword">self</span>!)` otherwise.</span><br><span class="line"><span class="variable">@warn_unused_result</span></span><br><span class="line"><span class="variable">@rethrows</span> public func flatMap&lt;<span class="constant">U&gt;</span>(<span class="variable">@noescape</span> <span class="symbol">f:</span> (<span class="constant">Wrapped)</span> throws -&gt; <span class="constant">U?</span>) rethrows -&gt; <span class="constant">U?</span></span><br><span class="line">/<span class="regexp">//</span> <span class="constant">Create </span>an instance initialized with `<span class="keyword">nil</span>`.</span><br><span class="line">public init(<span class="symbol">nilLiteral:</span> ())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Optional/">Optional</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/21/note-one-for-optional-in-swift/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-儿歌吧隐私政策" class="article article-type-post" itemscope itemprop="blogPost">
   
