@@ -13,7 +13,7 @@
 <meta property="og:description" content="在这里有必要纠正一下Git的发音。一种错误是按照单个字母来发音，另外一种更为普遍的错误是把整个单词读作“技特”，实际上Git中字母G的发音与下列单词中的G类似：GOD、GIVES、GREAT、GIFT。因此Git正确的发音应该听起来像是“歌易特”。">
 <meta property="og:image" content="http://blog.yinuolu.com/img/cvs_short_brief.png">
 <meta property="og:image" content="http://blog.yinuolu.com/img/svn_short_brief.png">
-<meta property="og:updated_time" content="2016-09-21T14:10:05.000Z">
+<meta property="og:updated_time" content="2016-09-21T14:14:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈svn和git">
 <meta name="twitter:description" content="在这里有必要纠正一下Git的发音。一种错误是按照单个字母来发音，另外一种更为普遍的错误是把整个单词读作“技特”，实际上Git中字母G的发音与下列单词中的G类似：GOD、GIVES、GREAT、GIFT。因此Git正确的发音应该听起来像是“歌易特”。">
@@ -119,7 +119,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 15px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 15px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -217,7 +217,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cvs/">cvs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
 	</div>
 
         
@@ -243,8 +243,11 @@
 <li>合并困难重重，因为缺乏对合并的追踪，从而导致重复合并，引发严重冲突。</li>
 <li>缺乏对原子提交的支持，会导致客户端向服务器端提交不完整的数据。</li>
 <li>不能优化存储内容相同但文件名不同的文件，因为在服务器端每个文件都是单独进行差异存储的。</li>
-<li>不能对文件和目录的重命名进行版本控制，虽然直接在服务器端修改RCS文件名可以让改名后的文件保存历史，但是这样做实际上会破坏历史。<br>  CVS的成功导致了版本控制系统的大爆发，各式各样的版本控制系统如雨后春笋般诞生了。新的版本控制系统或多或少地解决了CVS版本控制系统存在的问题。在这些版本控制系统中，最典型的就是Subversion（SVN）。<h4 id="1-2_SVN——集中式版本控制集大成者">1.2 SVN——集中式版本控制集大成者</h4>  Subversion，由于其命令行工具名为svn，因此通常被简称为SVN。SVN由CollabNet公司于2000年资助并开始开发，目的是创建一个更好用的版本控制系统以取代CVS。SVN的前期开发使用CVS做版本控制，到了2001年，SVN已经可以用于自己的版本控制了。<br><img src="/img/svn_short_brief.png" alt="02" title="svn 的简易结构图"></li>
+<li>不能对文件和目录的重命名进行版本控制，虽然直接在服务器端修改RCS文件名可以让改名后的文件保存历史，但是这样做实际上会破坏历史。</li>
 </ul>
+<p>CVS的成功导致了版本控制系统的大爆发，各式各样的版本控制系统如雨后春笋般诞生了。新的版本控制系统或多或少地解决了CVS版本控制系统存在的问题。在这些版本控制系统中，最典型的就是Subversion（SVN）。</p>
+<h4 id="1-2_SVN——集中式版本控制集大成者">1.2 SVN——集中式版本控制集大成者</h4><pre><code>Subversion，由于其命令行工具名为svn，因此通常被简称为SVN。SVN由CollabNet公司于<span class="number">2000</span>年资助并开始开发，目的是创建一个更好用的版本控制系统以取代CVS。SVN的前期开发使用CVS做版本控制，到了<span class="number">2001</span>年，SVN已经可以用于自己的版本控制了。
+</code></pre><p><img src="/img/svn_short_brief.png" alt="02" title="svn 的简易结构图"></p>
 
       
     </div>
