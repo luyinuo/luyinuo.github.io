@@ -207,7 +207,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/22/ats-enforced-at-the-end-of-2016/">ats-enforced-at-the-end-of-2016</a>
+      <a class="article-title" href="/2016/09/22/ats-enforced-at-the-end-of-2016/">ATS的强制推行</a>
     </h1>
   
 
@@ -216,10 +216,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在<code>Info.plist</code> 中添加<code>NSAppTransportSecurity</code> 字典并且将 <code>NSAllowsArbitraryLoads</code> 设置为 <code>YES</code> 来禁用 <code>ATS</code>。</p>
-<p>不过，WWDC 16 中，Apple 表示将继续在 iOS 10 和 macOSS 10.12 里收紧对普通 HTTP 的访问限制。从 2017 年 1 月 1 日起，所有的新提交 app 默认是不允许使用 <code>NSAllowsArbitraryLoads</code> 来绕过 ATS 限制的，也就是说，我们最好保证 app 的所有网络请求都是 HTTPS 加密的，否则可能会在应用审核时遇到麻烦。<a href="https://developer.apple.com/videos/play/wwdc2016/706/" target="_blank" rel="external">相关视频地址</a><br><em>以下是我在苹果官方的WWDC2016的相关视频中的截图</em><br><img src="/img/ats_enforced.png" alt=""><br>苹果官方对加密的要求是：<br><em>app只能访问加密足够强(TLSv1.2以上,AES-128和SHA-2以及ECDHC等)的HTTPS内容.
-</em>依然可以添加<code>NSAllowArbitraryLoads</code>为<code>YES</code>来禁用ATS,不过需要在提交app时进行特别说明，访问非https得原因。一般来说，可能类似浏览器的app或访问第三方服务器的api才符合条件。</p>
-
+        <p>ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在<code>Info.plist</code> 中添加<code>NSAppTransportSecurity</code> 字典并且将 <code>NSAllowsArbitraryLoads</code> 设置为 <code>YES</code> 来禁用 <code>ATS</code>。<br>
       
     </div>
     
@@ -232,6 +229,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/09/22/ats-enforced-at-the-end-of-2016/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
