@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 15px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 15px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
 					</div>
 				</section>
 				
@@ -189,6 +189,63 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-ats-enforced-at-the-end-of-2016" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/22/ats-enforced-at-the-end-of-2016/" class="article-date">
+  	<time datetime="2016-09-22T12:48:34.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/22/ats-enforced-at-the-end-of-2016/">ats-enforced-at-the-end-of-2016</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在<code>Info.plist</code> 中添加<code>NSAppTransportSecurity</code> 字典并且将 <code>NSAllowsArbitraryLoads</code> 设置为 <code>YES</code> 来禁用 <code>ATS</code>。</p>
+<p>不过，WWDC 16 中，Apple 表示将继续在 iOS 10 和 macOSS 10.12 里收紧对普通 HTTP 的访问限制。从 2017 年 1 月 1 日起，所有的新提交 app 默认是不允许使用 <code>NSAllowsArbitraryLoads</code> 来绕过 ATS 限制的，也就是说，我们最好保证 app 的所有网络请求都是 HTTPS 加密的，否则可能会在应用审核时遇到麻烦。<a href="https://developer.apple.com/videos/play/wwdc2016/706/" target="_blank" rel="external">相关视频地址</a><br><em>以下是我在苹果官方的WWDC2016的相关视频中的截图</em><br><img src="/img/ats_enforced.png" alt=""><br>苹果官方对加密的要求是：<br><em>app只能访问加密足够强(TLSv1.2以上,AES-128和SHA-2以及ECDHC等)的HTTPS内容.
+</em>依然可以添加<code>NSAllowArbitraryLoads</code>为<code>YES</code>来禁用ATS,不过需要在提交app时进行特别说明，访问非https得原因。一般来说，可能类似浏览器的app或访问第三方服务器的api才符合条件。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ATS/">ATS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Security/">Security</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-talk-about-git-and-svn" class="article article-type-post" itemscope itemprop="blogPost">
   
