@@ -5,7 +5,7 @@
   <subtitle><![CDATA[怕什么真理无穷,进一寸有一寸的欢喜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.yinuolu.com//"/>
-  <updated>2016-09-22T13:24:41.000Z</updated>
+  <updated>2017-10-12T14:59:26.000Z</updated>
   <id>http://blog.yinuolu.com//</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[autolayout-hugging-compression]]></title>
+    <link href="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/"/>
+    <id>http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/</id>
+    <published>2017-10-12T14:27:53.000Z</published>
+    <updated>2017-10-12T14:59:26.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="背景"><strong><em>背景</em></strong></h2><p>最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。</p>
+<p>###<br>说的autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，以上两个属性是关键。</p>
+<h3 id="Hugging_priority_:阻止自己大于真实显示尺寸的优先级">Hugging priority :阻止自己大于真实显示尺寸的优先级</h3><h3 id="Compression_Resistance_priority:阻止自己小于真实尺寸的优先级">Compression Resistance priority:阻止自己小于真实尺寸的优先级</h3><hr>
+<p><strong><em>__</em></strong>|<strong>___</strong>        <strong>__</strong>|<strong>_</strong>      |<br>|                |      |           |       |<br>|     label1    |——|   label2  | —–|<br>—————-       |————      |<br>        |                                  |<br><strong><em>__</em></strong>|<strong><strong>_</strong></strong>                        |<br>|                 |                          |<br>|     label3      |                          |<br>——————-                          |<br><strong><strong>_</strong></strong>|<strong><strong><strong><strong><strong><strong><strong><em>__</em></strong></strong></strong></strong></strong></strong></strong>|    </p>
+<p>###例1：水平方向<br>label1.Hugging@251 &gt; label2.Hugging@250<br>当label1和label2内容都不够时填充时，label1保持自己本身的尺寸，label2会被优先拉升<br>label1.compression@751 &gt; label2.compression@750<br>当label1的内容过宽时，label2的内容会被挤压</p>
+<p>###例2：垂直方向<br>label1.Hugging@251 &gt; label3.Hugging@250<br>同理label3会被优先拉升<br>label1.Compression@751 &gt; label3.Compression@750<br>同理lebel3会被优先压缩</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="背景"><strong><em>背景</em></strong></h2><p>最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查]]>
+    </summary>
+    
+      <category term="iOS" scheme="http://blog.yinuolu.com/tags/iOS/"/>
+    
+      <category term="Autolayout" scheme="http://blog.yinuolu.com/categories/Autolayout/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[ATS的强制推行]]></title>
     <link href="http://blog.yinuolu.com/2016/09/22/ats-enforced-at-the-end-of-2016/"/>
     <id>http://blog.yinuolu.com/2016/09/22/ats-enforced-at-the-end-of-2016/</id>
     <published>2016-09-22T12:48:34.000Z</published>
-    <updated>2016-09-22T13:24:41.000Z</updated>
+    <updated>2016-09-22T13:33:58.000Z</updated>
     <content type="html"><![CDATA[<p>ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在<code>Info.plist</code> 中添加<code>NSAppTransportSecurity</code> 字典并且将 <code>NSAllowsArbitraryLoads</code> 设置为 <code>YES</code> 来禁用 <code>ATS</code>。<br><a id="more"></a></p>
 <p>不过，WWDC 16 中，Apple 表示将继续在 iOS 10 和 macOSS 10.12 里收紧对普通 HTTP 的访问限制。从 2017 年 1 月 1 日起，所有的新提交 app 默认是不允许使用 <code>NSAllowsArbitraryLoads</code> 来绕过 ATS 限制的，也就是说，我们最好保证 app 的所有网络请求都是 HTTPS 加密的，否则可能会在应用审核时遇到麻烦。<a href="https://developer.apple.com/videos/play/wwdc2016/706/" target="_blank" rel="external">相关视频地址</a><br><em>以下是我在苹果官方的WWDC2016的相关视频中的截图</em><br><img src="/img/ats_enforced.png" alt=""></p>
 <h4 id="苹果官方对加密的要求是：">苹果官方对加密的要求是：</h4><ul>
@@ -186,7 +209,7 @@
     <link href="http://blog.yinuolu.com/2016/02/26/%E5%84%BF%E6%AD%8C%E5%90%A7%E4%B8%BB%E9%A1%B5/"/>
     <id>http://blog.yinuolu.com/2016/02/26/儿歌吧主页/</id>
     <published>2016-02-26T14:11:40.000Z</published>
-    <updated>2016-03-21T13:52:35.000Z</updated>
+    <updated>2016-09-22T14:22:04.000Z</updated>
     <content type="html"><![CDATA[<!--toc-->
 <p>1.<a href="#mou_1">简介</a><br>2.<a href="#mou_2">儿歌吧特色</a><br><!--tocstop--></p>
 <h3 id="简介">简介</h3><p><a name="mou_1"><br>儿歌吧，收集上百个好听的儿歌、童谣。满足于0-5岁宝宝的儿歌需求，通过儿歌吧的视频和动画内容帮助您的宝宝快乐健康的成长，促进宝宝的智力开发。</a></p>

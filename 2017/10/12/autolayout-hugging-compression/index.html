@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 日记 | KevinLu的博客</title>
+  <title>autolayout-hugging-compression | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="blog.yinuolu.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KevinLu的博客">
-<meta property="og:url" content="http://blog.yinuolu.com/tags/日记/index.html">
+  <meta name="description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
+###说的autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="autolayout-hugging-compression">
+<meta property="og:url" content="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
-<meta property="og:description" content="blog.yinuolu.com">
+<meta property="og:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
+###说的autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的">
+<meta property="og:updated_time" content="2017-10-12T14:59:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KevinLu的博客">
-<meta name="twitter:description" content="blog.yinuolu.com">
+<meta name="twitter:title" content="autolayout-hugging-compression">
+<meta name="twitter:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
+###说的autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
@@ -188,57 +192,112 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-autolayout-hugging-compression" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/11/11/搭建hexo遇到过得坑/" class="archive-article-date">
-  	<time datetime="2015-11-11T14:29:02.000Z" itemprop="datePublished">11月 11</time>
+    <div class="article-meta">
+      <a href="/2017/10/12/autolayout-hugging-compression/" class="article-date">
+  	<time datetime="2017-10-12T14:27:53.000Z" itemprop="datePublished">2017-10-12</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/11/11/搭建hexo遇到过得坑/">搭建hexo遇到过得坑</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      autolayout-hugging-compression
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
-          
+        
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+	<a class="article-category-link" href="/categories/Autolayout/">Autolayout</a>
 	</div>
 
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+      </div>
+      
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><strong><em>背景</em></strong></h2><p>最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。</p>
+<p>###<br>说的autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，以上两个属性是关键。</p>
+<h3 id="Hugging_priority_:阻止自己大于真实显示尺寸的优先级">Hugging priority :阻止自己大于真实显示尺寸的优先级</h3><h3 id="Compression_Resistance_priority:阻止自己小于真实尺寸的优先级">Compression Resistance priority:阻止自己小于真实尺寸的优先级</h3><hr>
+<p><strong><em>__</em></strong>|<strong>___</strong>        <strong>__</strong>|<strong>_</strong>      |<br>|                |      |           |       |<br>|     label1    |——|   label2  | —–|<br>—————-       |————      |<br>        |                                  |<br><strong><em>__</em></strong>|<strong><strong>_</strong></strong>                        |<br>|                 |                          |<br>|     label3      |                          |<br>——————-                          |<br><strong><strong>_</strong></strong>|<strong><strong><strong><strong><strong><strong><strong><em>__</em></strong></strong></strong></strong></strong></strong></strong>|    </p>
+<p>###例1：水平方向<br>label1.Hugging@251 &gt; label2.Hugging@250<br>当label1和label2内容都不够时填充时，label1保持自己本身的尺寸，label2会被优先拉升<br>label1.compression@751 &gt; label2.compression@750<br>当label1的内容过宽时，label2的内容会被挤压</p>
+<p>###例2：垂直方向<br>label1.Hugging@251 &gt; label3.Hugging@250<br>同理label3会被优先拉升<br>label1.Compression@751 &gt; label3.Compression@750<br>同理lebel3会被优先压缩</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/22/ats-enforced-at-the-end-of-2016/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ATS的强制推行</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="autolayout-hugging-compression" data-title="autolayout-hugging-compression" data-url="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"luyinuo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 </div>
       <footer id="footer">
@@ -264,9 +323,9 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}
