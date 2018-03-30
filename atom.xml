@@ -5,7 +5,7 @@
   <subtitle><![CDATA[怕什么真理无穷,进一寸有一寸的欢喜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.yinuolu.com//"/>
-  <updated>2017-10-12T15:31:27.000Z</updated>
+  <updated>2018-03-30T20:15:46.061Z</updated>
   <id>http://blog.yinuolu.com//</id>
   
   <author>
@@ -14,6 +14,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[yucedashi]]></title>
+    <link href="http://blog.yinuolu.com/2018/03/31/yucedashi/"/>
+    <id>http://blog.yinuolu.com/2018/03/31/yucedashi/</id>
+    <published>2018-03-30T20:07:20.000Z</published>
+    <updated>2018-03-30T20:15:46.061Z</updated>
+    <content type="html"><![CDATA[<h3 id="简介">简介</h3><p><a name="mou_1"><br>中国福彩体彩竞彩预测发布，特邀几万名专家排名力助彩民中奖，大数据分析，提高中奖概率。<br>本平台上包含了大乐透，双色球，福彩3D，七星彩，七乐彩，排列三，排列五等专家，是国内最真实最专业最靠谱的彩票预测平台。</a></p>
+<p><img src="/img/IMG_01.jpg" alt="01"><br><img src="/img/IMG_02.jpg" alt="02"><br><img src="/img/IMG_03.jpg" alt="03"><br><img src="/img/IMG_04.jpg" alt="04"><br><img src="/img/IMG_05.jpg" alt="05"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="简介">简介</h3><p><a name="mou_1"><br>中国福彩体彩竞彩预测发布，特邀几万名专家排名力助彩民中奖，大数据分析，提高中奖概率。<br>本平台上包含了大乐透，双色球，福彩3D，七星彩，七乐彩，排列三，排列五等专家，是国内最真实最专业最靠谱的]]>
+    </summary>
+    
+      <category term="预测大师" scheme="http://blog.yinuolu.com/tags/%E9%A2%84%E6%B5%8B%E5%A4%A7%E5%B8%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[autolayout-hugging-compression]]></title>
