@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>OpenCV之-实现图片马赛克 | KevinLu的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一什么是OpenCV? 跨平台视觉库 支持c/c++. java. python. oc . swift. ruby等语言 支持Windows平台，Mac平台，Ios平台，Android平台，Linux平台  第二发展历程：从1999年至2018年持续更新。 第三支持模块：1、人机互动 2、物体识别 3、图像分割4、人脸识别5、动作识别 6、运动跟踪7、机器人 8、运动分析 9、机器视觉 10、">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV之-实现图片马赛克">
+<meta property="og:url" content="http://blog.yinuolu.com/2018/07/17/OpenCV-Masaic/index.html">
+<meta property="og:site_name" content="KevinLu的博客">
+<meta property="og:description" content="第一什么是OpenCV? 跨平台视觉库 支持c/c++. java. python. oc . swift. ruby等语言 支持Windows平台，Mac平台，Ios平台，Android平台，Linux平台  第二发展历程：从1999年至2018年持续更新。 第三支持模块：1、人机互动 2、物体识别 3、图像分割4、人脸识别5、动作识别 6、运动跟踪7、机器人 8、运动分析 9、机器视觉 10、">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://blog.yinuolu.com/img/马赛克原理.png">
+<meta property="og:image" content="http://blog.yinuolu.com/img/demo_masaic.png">
+<meta property="og:updated_time" content="2018-07-17T13:43:10.689Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenCV之-实现图片马赛克">
+<meta name="twitter:description" content="第一什么是OpenCV? 跨平台视觉库 支持c/c++. java. python. oc . swift. ruby等语言 支持Windows平台，Mac平台，Ios平台，Android平台，Linux平台  第二发展历程：从1999年至2018年持续更新。 第三支持模块：1、人机互动 2、物体识别 3、图像分割4、人脸识别5、动作识别 6、运动跟踪7、机器人 8、运动分析 9、机器视觉 10、">
+<meta name="twitter:image" content="http://blog.yinuolu.com/img/马赛克原理.png">
+  
+    <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/katong.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Kevin Lu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">怕什么真理无穷,进一寸有一寸的欢喜</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://vaenow.com/">Vaenow的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">无名码农，上得了厅堂，下得了厨房，写得了代码，通得了厕所，java半生不熟，OC要懂不懂，在程序员的路上越走越远，直到无法自拔。。。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Kevin Lu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/katong.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Kevin Lu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">怕什么真理无穷,进一寸有一寸的欢喜</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-OpenCV-Masaic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/17/OpenCV-Masaic/" class="article-date">
+  	<time datetime="2018-07-17T11:33:58.000Z" itemprop="datePublished">2018-07-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      OpenCV之-实现图片马赛克
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一什么是OpenCV?">第一什么是OpenCV?</h2><ul>
+<li>跨平台视觉库</li>
+<li>支持c/c++. java. python. oc . swift. ruby等语言</li>
+<li>支持Windows平台，Mac平台，Ios平台，Android平台，Linux平台</li>
+</ul>
+<h2 id="第二发展历程：">第二发展历程：</h2><p>从1999年至2018年持续更新。</p>
+<h2 id="第三支持模块：">第三支持模块：</h2><p>1、人机互动 2、物体识别 3、图像分割4、人脸识别5、动作识别 6、运动跟踪7、机器人 8、运动分析 9、机器视觉 10、结构分析 11、汽车安全驾驶（百度）</p>
+<p>前往<a href="https://opencv.org" target="_blank" rel="noopener">官网</a>下载最新版本<a href="https://sourceforge.net/projects/opencvlibrary/files/opencv-ios/3.4.1/opencv-3.4.1-ios-framework.zip/download" target="_blank" rel="noopener">3.4.1</a><br><a id="more"></a></p>
+<h2 id="马赛克的实现原理：">马赛克的实现原理：</h2><p>&emsp;&emsp;&ensp;把图片划分成若干个矩阵（自己定义矩阵的大小），把每个矩阵的第一个像素值取出渲染到其他像素点，比如1000x1000的区域，打码成10*10<br><img src="/img/马赛克原理.png" alt="01"></p>
+<h2 id="实现效果">实现效果</h2><p>&emsp;&emsp;&ensp;图1~图4分别显示不同矩阵大小的打码效果，<br><img src="/img/demo_masaic.png" alt="02"><br>取固定的间隔在图像处理中叫做采样频率，采样频率不够大的时候是可以通过中值、高斯等平滑方法方法补全的。</p>
+<h3 id="实现代码">实现代码</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.先要导入刚刚下好的opencv库到工程</span></span><br><span class="line"><span class="comment">//2.倒入OpenCV框架</span></span><br><span class="line"><span class="comment">//核心头文件</span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="comment">//对iOS支持</span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;opencv2/imgcodecs/ios.h&gt;</span></span></span><br><span class="line"><span class="comment">//导入矩阵帮助类</span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;opencv2/highgui.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#import <span class="meta-string">&lt;opencv2/core/types.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line">    +(UIImage*)opencvImage:(UIImage*)<span class="built_in">image</span> level:(<span class="keyword">int</span>)level&#123;</span><br><span class="line">        <span class="comment">//实现功能</span></span><br><span class="line">        <span class="comment">//第一步：将iOS图片-&gt;OpenCV图片(Mat矩阵)</span></span><br><span class="line">        Mat mat_image_src;</span><br><span class="line">        UIImageToMat(<span class="built_in">image</span>, mat_image_src);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//第二步：确定宽高</span></span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">width</span> = mat_image_src.cols;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">height</span> = mat_image_src.rows;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//图片类型-&gt;进行转换</span></span><br><span class="line">        <span class="comment">//在OpenCV里面</span></span><br><span class="line">        <span class="comment">//坑隐藏</span></span><br><span class="line">        <span class="comment">//支持-&gt;RGB处理</span></span><br><span class="line">        <span class="comment">//图片ARGB</span></span><br><span class="line">        <span class="comment">//将ARGB-&gt;RGB</span></span><br><span class="line">        Mat mat_image_dst;</span><br><span class="line">        cvtColor(mat_image_src, mat_image_dst, CV_RGBA2RGB, <span class="number">3</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//调用cvtColor保持一致(RGB)，进行转换的时候，一定要记得转换类型</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//第三步：马赛克处理</span></span><br><span class="line">        <span class="comment">//分析马赛克算法原理</span></span><br><span class="line">        <span class="comment">//level = 3-&gt; 3 * 3矩形</span></span><br><span class="line">        <span class="comment">//动态的处理</span></span><br><span class="line">        <span class="keyword">int</span> x = <span class="built_in">width</span> - level;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="built_in">height</span> - level;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; y; i += level) &#123;</span><br><span class="line">            <span class="built_in">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; x; j += level) &#123;</span><br><span class="line">                <span class="comment">//创建一个矩形区域</span></span><br><span class="line">                Rect2i mosaicRect = Rect2i(j, i, level, level);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//给填Rect2i区域-&gt;填充数据-&gt;原始数据</span></span><br><span class="line">                Mat roi = mat_image_dst(mosaicRect);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//让整个矩形区域颜色值保持一致</span></span><br><span class="line">                <span class="comment">//mat_image_clone.at&lt;Vec3b&gt;(i, j)-&gt;取出RGB色值</span></span><br><span class="line">                <span class="comment">//mat_image_clone.at&lt;Vec3b&gt;(i, j)[0]-&gt;R值</span></span><br><span class="line">                <span class="comment">//mat_image_clone.at&lt;Vec3b&gt;(i, j)[1]-&gt;G值</span></span><br><span class="line">                <span class="comment">//mat_image_clone.at&lt;Vec3b&gt;(i, j)[2]-&gt;B值</span></span><br><span class="line">                Scalar scalar = Scalar(</span><br><span class="line">                       mat_image_dst.at&lt;Vec3b&gt;(i, j)[<span class="number">0</span>],</span><br><span class="line">                       mat_image_dst.at&lt;Vec3b&gt;(i, j)[<span class="number">1</span>],</span><br><span class="line">                       mat_image_dst.at&lt;Vec3b&gt;(i, j)[<span class="number">2</span>]);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">//将处理好矩形区域-&gt;数据-&gt;拷贝到图片上面去-&gt;修改后的数据</span></span><br><span class="line">                <span class="comment">//CV_8UC3</span></span><br><span class="line">                <span class="comment">//CV_:表示框架命名空间</span></span><br><span class="line">                <span class="comment">//8表示：32位色-&gt;ARGB-&gt;8位 = 1字节 -&gt; 4个字节</span></span><br><span class="line">                <span class="comment">//U</span></span><br><span class="line">                <span class="comment">//两种类型：有符号类型(Sign-&gt;有正负-&gt;简写"S")、无符号类型(Unsign-&gt;正数-&gt;"U")</span></span><br><span class="line">                <span class="comment">//无符号类型：0-255(通常情况)</span></span><br><span class="line">                <span class="comment">//有符号类型：-128-127</span></span><br><span class="line">                <span class="comment">//C分析：char类型</span></span><br><span class="line">                <span class="comment">//3表示：3个通道-&gt;RGB</span></span><br><span class="line">                <span class="comment">//把scalar渲染到mosaicRect矩阵的所有区域</span></span><br><span class="line">                Mat roiCopy = Mat(mosaicRect.<span class="built_in">size</span>(), CV_8UC3, scalar);</span><br><span class="line">                roiCopy.copyTo(roi);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//第四步：将OpenCV图片-&gt;iOS图片</span></span><br><span class="line">        <span class="built_in">return</span> MatToUIImage(mat_image_dst);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>先写到这里，未完待续—</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/12/autolayout-hugging-compression/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">autolayout-hugging-compression</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="OpenCV-Masaic" data-title="OpenCV之-实现图片马赛克" data-url="http://blog.yinuolu.com/2018/07/17/OpenCV-Masaic/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"luyinuo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Kevin Lu
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
