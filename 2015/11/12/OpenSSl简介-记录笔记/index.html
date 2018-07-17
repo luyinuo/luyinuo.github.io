@@ -5,26 +5,25 @@
   
   <title>OpenSSl简介-记录笔记 | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念
-公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
+  <meta name="description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念 公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
+<meta name="keywords" content="OpenSSL,随笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenSSl简介-记录笔记">
 <meta property="og:url" content="http://blog.yinuolu.com/2015/11/12/OpenSSl简介-记录笔记/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
-<meta property="og:description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念
-公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
+<meta property="og:description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念 公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-11-12T10:05:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenSSl简介-记录笔记">
-<meta name="twitter:description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念
-公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
+<meta name="twitter:description" content="OpenSSl 简介公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.OpenSSL初接触的人恐怕最难的在于先理解各种概念 公钥/私钥/签名/验证签名/加密/解密/非对称加密　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
@@ -109,9 +108,9 @@
 							
 								<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -120,7 +119,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a> <a href="/tags/预测大师/" style="font-size: 10px;">预测大师</a>
+						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -183,9 +182,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -321,7 +320,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -337,8 +336,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 

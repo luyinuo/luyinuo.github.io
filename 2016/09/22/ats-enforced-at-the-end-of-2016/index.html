@@ -6,23 +6,26 @@
   <title>ATS的强制推行 | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在Info.plist 中添加NSAppTransportSecurity 字典并且将 NSAllowsArbitraryL">
+<meta name="keywords" content="ATS,Security">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ATS的强制推行">
 <meta property="og:url" content="http://blog.yinuolu.com/2016/09/22/ats-enforced-at-the-end-of-2016/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
 <meta property="og:description" content="ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在Info.plist 中添加NSAppTransportSecurity 字典并且将 NSAllowsArbitraryL">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://blog.yinuolu.com/img/ats_enforced.png">
 <meta property="og:updated_time" content="2016-09-22T13:33:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ATS的强制推行">
 <meta name="twitter:description" content="ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在Info.plist 中添加NSAppTransportSecurity 字典并且将 NSAllowsArbitraryL">
+<meta name="twitter:image" content="http://blog.yinuolu.com/img/ats_enforced.png">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
@@ -107,9 +110,9 @@
 							
 								<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -118,7 +121,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a> <a href="/tags/预测大师/" style="font-size: 10px;">预测大师</a>
+						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -181,9 +184,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -228,7 +231,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>ATS (即App Transport Security) 是 Apple 在2015年WWDC上推进网络通讯安全的一个重要方式。在 iOS 9 和 OS X 10.11 中，默认情况下非 HTTPS 的网络访问是被禁止的。当然，因为这样的推进影响面非常广，作为缓冲，我们可以在<code>Info.plist</code> 中添加<code>NSAppTransportSecurity</code> 字典并且将 <code>NSAllowsArbitraryLoads</code> 设置为 <code>YES</code> 来禁用 <code>ATS</code>。<br><a id="more"></a></p>
-<p>不过，WWDC 16 中，Apple 表示将继续在 iOS 10 和 macOSS 10.12 里收紧对普通 HTTP 的访问限制。从 2017 年 1 月 1 日起，所有的新提交 app 默认是不允许使用 <code>NSAllowsArbitraryLoads</code> 来绕过 ATS 限制的，也就是说，我们最好保证 app 的所有网络请求都是 HTTPS 加密的，否则可能会在应用审核时遇到麻烦。<a href="https://developer.apple.com/videos/play/wwdc2016/706/" target="_blank" rel="external">相关视频地址</a><br><em>以下是我在苹果官方的WWDC2016的相关视频中的截图</em><br><img src="/img/ats_enforced.png" alt=""></p>
+<p>不过，WWDC 16 中，Apple 表示将继续在 iOS 10 和 macOSS 10.12 里收紧对普通 HTTP 的访问限制。从 2017 年 1 月 1 日起，所有的新提交 app 默认是不允许使用 <code>NSAllowsArbitraryLoads</code> 来绕过 ATS 限制的，也就是说，我们最好保证 app 的所有网络请求都是 HTTPS 加密的，否则可能会在应用审核时遇到麻烦。<a href="https://developer.apple.com/videos/play/wwdc2016/706/" target="_blank" rel="noopener">相关视频地址</a><br><em>以下是我在苹果官方的WWDC2016的相关视频中的截图</em><br><img src="/img/ats_enforced.png" alt=""></p>
 <h4 id="苹果官方对加密的要求是：">苹果官方对加密的要求是：</h4><ul>
 <li>app只能访问加密足够强(TLSv1.2以上,AES-128和SHA-2以及ECDHC等)的HTTPS内容.</li>
 <li>依然可以添加<code>NSAllowArbitraryLoads</code>为<code>YES</code>来禁用ATS,不过需要在提交app时进行特别说明，访问非https得原因。一般来说，可能类似浏览器的app或访问第三方服务器的api才符合条件。</li>
@@ -317,7 +320,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -333,8 +336,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 

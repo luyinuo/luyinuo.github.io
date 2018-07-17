@@ -5,26 +5,25 @@
   
   <title>autolayout-hugging-compression | KevinLu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
-说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，">
+  <meta name="description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="autolayout-hugging-compression">
 <meta property="og:url" content="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
-<meta property="og:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
-说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，">
+<meta property="og:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-10-12T15:31:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="autolayout-hugging-compression">
-<meta name="twitter:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。
-说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，">
+<meta name="twitter:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
   
     <link rel="alternative" href="/atom.xml" title="KevinLu的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
@@ -109,9 +108,9 @@
 							
 								<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 					        
-								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
 					        
 						</div>
 					</nav>
@@ -120,7 +119,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a> <a href="/tags/预测大师/" style="font-size: 10px;">预测大师</a>
+						<a href="/tags/ATS/" style="font-size: 10px;">ATS</a> <a href="/tags/OpenSSL/" style="font-size: 10px;">OpenSSL</a> <a href="/tags/Optional/" style="font-size: 10px;">Optional</a> <a href="/tags/Security/" style="font-size: 10px;">Security</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/cvs/" style="font-size: 10px;">cvs</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/儿歌吧/" style="font-size: 13.33px;">儿歌吧</a> <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/版本控制/" style="font-size: 10px;">版本控制</a> <a href="/tags/随笔/" style="font-size: 16.67px;">随笔</a>
 					</div>
 				</section>
 				
@@ -183,9 +182,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/luyinuo/" title="github">github</a>
 			        
-						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
 			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
 			        
 				</div>
 			</nav>
@@ -236,7 +235,7 @@
         <p> <strong><em>背景</em></strong><br>最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。</p>
 <p>说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，以上两个属性是关键。</p>
 <p><strong><em> Hugging priority </em></strong> :阻止自己大于真实显示尺寸的优先级<br><strong><em> Compression Resistance priority </em></strong> :阻止自己小于真实尺寸的优先级 </p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> ___________________________________________</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_______        ______</span>|<span class="string">_____      </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">               </span>|<span class="string">      </span>|<span class="string">            </span>|<span class="string">     </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label1    </span>|<span class="string">------</span>|<span class="string">   label2   </span>|<span class="string">-----</span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_______________</span>|<span class="string">      </span>|<span class="string">____________</span>|<span class="string">     </span>|<span class="string"> </span><br><span class="line"></span>|<span class="string">         </span>|<span class="string">                                 </span>|</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_________                        </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">                 </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label3      </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_________________</span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">_________</span>|<span class="string">_________________________________</span>|</span><br></pre></td></tr></table></figure>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> ___________________________________________</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_______        ______</span>|<span class="string">_____      </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">               </span>|<span class="string">      </span>|<span class="string">            </span>|<span class="string">     </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label1    </span>|<span class="string">------</span>|<span class="string">   label2   </span>|<span class="string">-----</span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_______________</span>|<span class="string">      </span>|<span class="string">____________</span>|<span class="string">     </span>|<span class="string"> </span></span><br><span class="line">|<span class="string">         </span>|<span class="string">                                 </span>|</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_________                        </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">                 </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label3      </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_________________</span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">_________</span>|<span class="string">_________________________________</span>|</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><strong><em> 例1：水平方向 </em></strong><br>label1.Hugging@251 &gt; label2.Hugging@250<br>当label1和label2内容都不够时填充时，label1保持自己本身的尺寸，label2会被优先拉升<br>label1.compression@751 &gt; label2.compression@750<br>当label1的内容过宽时，label2的内容会被挤压</p>
 <p><strong><em> 例2：垂直方向 </em></strong><br>label1.Hugging@251 &gt; label3.Hugging@250<br>同理label3会被优先拉升<br>label1.Compression@751 &gt; label3.Compression@750<br>同理lebel3会被优先压缩</p>
@@ -248,15 +247,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2018/03/31/yucedashi/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          预测大师
-        
-      </div>
-    </a>
   
   
     <a href="/2016/09/22/ats-enforced-at-the-end-of-2016/" id="article-nav-older" class="article-nav-link-wrap">
@@ -324,7 +314,7 @@
 </footer>
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -340,8 +330,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 
