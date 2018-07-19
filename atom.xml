@@ -5,7 +5,7 @@
   <subtitle><![CDATA[怕什么真理无穷,进一寸有一寸的欢喜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.yinuolu.com//"/>
-  <updated>2018-07-17T13:43:10.689Z</updated>
+  <updated>2018-07-19T14:31:31.717Z</updated>
   <id>http://blog.yinuolu.com//</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[iTerm2常用设置和快捷键]]></title>
+    <link href="http://blog.yinuolu.com/2018/07/19/iTerm2-setting-and-shortcut/"/>
+    <id>http://blog.yinuolu.com/2018/07/19/iTerm2-setting-and-shortcut/</id>
+    <published>2018-07-19T14:02:34.000Z</published>
+    <updated>2018-07-19T14:31:31.717Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-设置窗口">1.设置窗口</h1><p> 定位到 [Preferences - Profiles - Window] 新窗口设定风格设为 [Top of Screen]，这样每次新打开终端都会固定出现在屏幕的顶端且不会有窗口边框。如果你也使用多 Space 和双显示器的话，同时选择 Main Screen 和 All Space 会比较方便。</p>
+<h1 id="2-设置快捷键">2.设置快捷键</h1><p> 这一步很简单，定位到 [Preferences - Keys - Hotkey]，这里有两个选项，第一个为设置全局快捷键，在 iTerm 启动的前提下，使用该快捷键可显示或隐藏窗口。第二个指定新窗口使用哪个 Profile，这里就指定为在 Step1 中设置了 WIndow 的那个即可，勾选这个选项能获得显示／隐藏窗口时淡入淡出的技能。</p>
+<h1 id="3-Tips">3.Tips</h1><p> <strong> 3.1</strong>  需要全屏？复制原来的 Profile 然后指定快捷键，再 WIndow - Style 选择全屏。<br> <strong> 3.2</strong>「CMD+D」水平分割窗口，为保持界面简洁在 [Preferences - Appearance] 中不勾选 [Show per-pane title bar …]<br> <strong>3.4</strong> 如果使用开机启动 iTerm 的方式则不要勾选 [Preferences - General] [Quit when all windows are closed]<br> <strong>3.5</strong> 在 [Preferences - Pointer] 勾选 [Focus follows mouse]，方便在窗口间切换。</p>
+<h1 id="4-选中即复制">4.选中即复制</h1><h3 id="iterm2有2种好用的选中即复制模式">iterm2有2种好用的选中即复制模式</h3><ul>
+<li>一种是用鼠标，在iterm2中，选中某个路径或者某个词汇，那么，iterm2就自动复制了。 </li>
+<li>另一种是无鼠标模式，command+f,弹出iterm2的查找模式，输入要查找并复制的内容的前几个字母，确认找到的是自己的内容之后，输入tab，查找窗口将自动变化内容，并将其复制。如果输入的是shift+tab，则自动将查找内容的左边选中并复制。</li>
+</ul>
+<h1 id="5-剪切历史">5.剪切历史</h1><p> 输入command+shift+h，iterm2将自动列出剪切板的历史记录</p>
+<h1 id="6-全屏切换">6.全屏切换</h1><p> command+enter进入与返回全屏模式</p>
+<h1 id="其它命令：">其它命令：</h1> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">查找: Cmd+f</span><br><span class="line">自动完成: Cmd+;</span><br><span class="line">命令历史: Cmd+Shift+H</span><br><span class="line">命令回放: Cmd+Alt+B</span><br><span class="line">iTerm2 Exposé: Cmd+ Alt+E</span><br><span class="line">Ctrl+a: 光标移动到行首</span><br><span class="line">Ctrl+e: 光标移动到行末</span><br><span class="line">Ctrl+f: 前移一个字符</span><br><span class="line">Ctrl+b: 后退一个字符</span><br><span class="line">Ctrl+l: 清屏</span><br><span class="line">Ctrl+p: 显示历史命令</span><br><span class="line">Ctrl+r: 倒转查找</span><br><span class="line">Ctrl+d: 删除当前字符</span><br><span class="line">Ctrl+h: 删除前一字符</span><br><span class="line">Ctrl+w: 删除光标之前的字符</span><br><span class="line">Ctrl+k: 删除光标之后整行</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="1-设置窗口">1.设置窗口</h1><p> 定位到 [Preferences - Profiles - Window] 新窗口设定风格设为 [Top of Screen]，这样每次新打开终端都会固定出现在屏幕的顶端且不会有窗口边框。如果你也使用多 Space 和]]>
+    </summary>
+    
+      <category term="iTerm2 tool" scheme="http://blog.yinuolu.com/tags/iTerm2-tool/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[OpenCV之-实现图片马赛克]]></title>

@@ -234,6 +234,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.yinuolu.com/2018/07/19/iTerm2-setting-and-shortcut/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kevin Lu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KevinLu的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/19/iTerm2-setting-and-shortcut/" itemprop="url">iTerm2常用设置和快捷键</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-19T22:02:34+08:00">
+                2018-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/07/19/iTerm2-setting-and-shortcut/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/07/19/iTerm2-setting-and-shortcut/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-设置窗口">1.设置窗口</h1><p> 定位到 [Preferences - Profiles - Window] 新窗口设定风格设为 [Top of Screen]，这样每次新打开终端都会固定出现在屏幕的顶端且不会有窗口边框。如果你也使用多 Space 和双显示器的话，同时选择 Main Screen 和 All Space 会比较方便。</p>
+<h1 id="2-设置快捷键">2.设置快捷键</h1><p> 这一步很简单，定位到 [Preferences - Keys - Hotkey]，这里有两个选项，第一个为设置全局快捷键，在 iTerm 启动的前提下，使用该快捷键可显示或隐藏窗口。第二个指定新窗口使用哪个 Profile，这里就指定为在 Step1 中设置了 WIndow 的那个即可，勾选这个选项能获得显示／隐藏窗口时淡入淡出的技能。</p>
+<h1 id="3-Tips">3.Tips</h1><p> <strong> 3.1</strong>  需要全屏？复制原来的 Profile 然后指定快捷键，再 WIndow - Style 选择全屏。<br> <strong> 3.2</strong>「CMD+D」水平分割窗口，为保持界面简洁在 [Preferences - Appearance] 中不勾选 [Show per-pane title bar …]<br> <strong>3.4</strong> 如果使用开机启动 iTerm 的方式则不要勾选 [Preferences - General] [Quit when all windows are closed]<br> <strong>3.5</strong> 在 [Preferences - Pointer] 勾选 [Focus follows mouse]，方便在窗口间切换。</p>
+<h1 id="4-选中即复制">4.选中即复制</h1><h3 id="iterm2有2种好用的选中即复制模式">iterm2有2种好用的选中即复制模式</h3><ul>
+<li>一种是用鼠标，在iterm2中，选中某个路径或者某个词汇，那么，iterm2就自动复制了。 </li>
+<li>另一种是无鼠标模式，command+f,弹出iterm2的查找模式，输入要查找并复制的内容的前几个字母，确认找到的是自己的内容之后，输入tab，查找窗口将自动变化内容，并将其复制。如果输入的是shift+tab，则自动将查找内容的左边选中并复制。</li>
+</ul>
+<h1 id="5-剪切历史">5.剪切历史</h1><p> 输入command+shift+h，iterm2将自动列出剪切板的历史记录</p>
+<h1 id="6-全屏切换">6.全屏切换</h1><p> command+enter进入与返回全屏模式</p>
+<h1 id="其它命令：">其它命令：</h1> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">查找: Cmd+f</span><br><span class="line">自动完成: Cmd+;</span><br><span class="line">命令历史: Cmd+Shift+H</span><br><span class="line">命令回放: Cmd+Alt+B</span><br><span class="line">iTerm2 Exposé: Cmd+ Alt+E</span><br><span class="line">Ctrl+a: 光标移动到行首</span><br><span class="line">Ctrl+e: 光标移动到行末</span><br><span class="line">Ctrl+f: 前移一个字符</span><br><span class="line">Ctrl+b: 后退一个字符</span><br><span class="line">Ctrl+l: 清屏</span><br><span class="line">Ctrl+p: 显示历史命令</span><br><span class="line">Ctrl+r: 倒转查找</span><br><span class="line">Ctrl+d: 删除当前字符</span><br><span class="line">Ctrl+h: 删除前一字符</span><br><span class="line">Ctrl+w: 删除光标之前的字符</span><br><span class="line">Ctrl+k: 删除光标之后整行</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.yinuolu.com/2018/07/17/OpenCV-Masaic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1471,163 +1610,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yinuolu.com/2015/11/12/OpenSSl简介-记录笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kevin Lu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KevinLu的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/11/12/OpenSSl简介-记录笔记/" itemprop="url">OpenSSl简介-记录笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-11-12T17:58:46+08:00">
-                2015-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OpenSSL/" itemprop="url" rel="index">
-                    <span itemprop="name">OpenSSL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2015/11/12/OpenSSl简介-记录笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/12/OpenSSl简介-记录笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="OpenSSl_简介">OpenSSl 简介</h2><p>公司一个项目要进行交易数据传输,因为这个项目银行那边也是刚刚开始启动,所有的支持只有一个传输字段的说明文档,好吧,总的有人做事不是嘛,于是接口开发正式展开,第一步的难点就是加密解密,我选择使用OpenSSL.<br>OpenSSL初接触的人恐怕最难的在于先理解各种概念</p>
-<h3 id="公钥/私钥/签名/验证签名/加密/解密/非对称加密">公钥/私钥/签名/验证签名/加密/解密/非对称加密</h3><p>　　我们一般的加密是用一个密码加密文件,然后解密也用同样的密码.这很好理解,这个是对称加密.而有些加密时,加密用的一个密码,而解密用另外一组密码,这个叫非对称加密,意思就是加密解密的密码不一样.初次接触的人恐怕无论如何都理解不了.其实这是数学上的一个素数积求因子的原理的应用,如果你一定要搞懂,百度有大把大把的资料可以看,其结果就是用这一组密钥中的一个来加密数据,可以用另一个解开.是的没错,公钥和私钥都可以用来加密数据,相反用另一个解开,公钥加密数据,然后私钥解密的情况被称为加密解密,私钥加密数据,公钥解密一般被称为签名和验证签名.
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/12/OpenSSl简介-记录笔记/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1678,7 +1660,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1700,7 +1682,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
