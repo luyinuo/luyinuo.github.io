@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="iOS," />
+  <meta name="keywords" content="链表," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
-<meta name="keywords" content="iOS">
+<meta name="description" content="如何利用链表实现LRU(Least Recently Used)缓存淘汰算法缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，如常见的：CPU缓存、数据库缓存、浏览器缓存等等。 缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的缓存策略有三种：先进先出策略FIFO(First In First Out)、最少使">
+<meta name="keywords" content="链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="autolayout-hugging-compression">
-<meta property="og:url" content="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/index.html">
+<meta property="og:title" content="数据结构预算法之:LinkedList">
+<meta property="og:url" content="http://blog.yinuolu.com/2019/10/28/Data-Structure-And-Algorithm-LinkedList/index.html">
 <meta property="og:site_name" content="KevinLu的博客">
-<meta property="og:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
+<meta property="og:description" content="如何利用链表实现LRU(Least Recently Used)缓存淘汰算法缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，如常见的：CPU缓存、数据库缓存、浏览器缓存等等。 缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的缓存策略有三种：先进先出策略FIFO(First In First Out)、最少使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-12T15:31:27.000Z">
+<meta property="og:updated_time" content="2019-10-28T16:42:35.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="autolayout-hugging-compression">
-<meta name="twitter:description" content="背景最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。 说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度">
+<meta name="twitter:title" content="数据结构预算法之:LinkedList">
+<meta name="twitter:description" content="如何利用链表实现LRU(Least Recently Used)缓存淘汰算法缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，如常见的：CPU缓存、数据库缓存、浏览器缓存等等。 缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的缓存策略有三种：先进先出策略FIFO(First In First Out)、最少使">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/"/>
+  <link rel="canonical" href="http://blog.yinuolu.com/2019/10/28/Data-Structure-And-Algorithm-LinkedList/"/>
 
 
 
 
 
-  <title>autolayout-hugging-compression | KevinLu的博客</title>
+  <title>数据结构预算法之:LinkedList | KevinLu的博客</title>
   
 
 
@@ -235,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yinuolu.com/2019/10/28/Data-Structure-And-Algorithm-LinkedList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Lu">
@@ -252,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">autolayout-hugging-compression</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构预算法之:LinkedList</h1>
         
 
         <div class="post-meta">
@@ -264,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-12T22:27:53+08:00">
-                2017-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-28T23:50:31+08:00">
+                2019-10-28
               </time>
             
 
@@ -275,28 +275,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Autolayout/" itemprop="url" rel="index">
-                    <span itemprop="name">Autolayout</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -305,8 +283,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/12/autolayout-hugging-compression/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/12/autolayout-hugging-compression/" itemprop="commentCount"></span>
+                <a href="/2019/10/28/Data-Structure-And-Algorithm-LinkedList/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/10/28/Data-Structure-And-Algorithm-LinkedList/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -334,13 +312,33 @@
       
 
       
-        <p> <strong><em>背景</em></strong><br>最近公司遇到动态计算cell高度的一个需求，由于有段时间没有写UI相关的东西了，autolayout都有点生疏了，所以复习了一下autolayout的内容，在此记下一些笔记，方便日后查阅。</p>
-<p>说到autolayout，重点是理解hugging和compression两个属性，在动态计算cell的高度，特别是UILabel多行计算是常态，那么遇到多个UILabel相互依赖，撑起整个cell的高度，以上两个属性是关键。</p>
-<p><strong><em> Hugging priority </em></strong> :阻止自己大于真实显示尺寸的优先级<br><strong><em> Compression Resistance priority </em></strong> :阻止自己小于真实尺寸的优先级 </p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> ___________________________________________</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_______        ______</span>|<span class="string">_____      </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">               </span>|<span class="string">      </span>|<span class="string">            </span>|<span class="string">     </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label1    </span>|<span class="string">------</span>|<span class="string">   label2   </span>|<span class="string">-----</span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_______________</span>|<span class="string">      </span>|<span class="string">____________</span>|<span class="string">     </span>|<span class="string"> </span></span><br><span class="line">|<span class="string">         </span>|<span class="string">                                 </span>|</span><br><span class="line">|<span class="string">  _______</span>|<span class="string">_________                        </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">                 </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">-</span>|<span class="string">     label3      </span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string"> </span>|<span class="string">_________________</span>|<span class="string">                       </span>|</span><br><span class="line">|<span class="string">_________</span>|<span class="string">_________________________________</span>|</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><strong><em> 例1：水平方向 </em></strong><br>label1.Hugging@251 &gt; label2.Hugging@250<br>当label1和label2内容都不够时填充时，label1保持自己本身的尺寸，label2会被优先拉升<br>label1.compression@751 &gt; label2.compression@750<br>当label1的内容过宽时，label2的内容会被挤压</p>
-<p><strong><em> 例2：垂直方向 </em></strong><br>label1.Hugging@251 &gt; label3.Hugging@250<br>同理label3会被优先拉升<br>label1.Compression@751 &gt; label3.Compression@750<br>同理lebel3会被优先压缩</p>
+        <h2 id="如何利用链表实现LRU(Least_Recently_Used)缓存淘汰算法">如何利用链表实现LRU(Least Recently Used)缓存淘汰算法</h2><p>缓存是一种提高数据读取性能的技术，在硬件设计、软件开发中都有着非常广泛的应用，如常见的：CPU缓存、数据库缓存、浏览器缓存等等。</p>
+<p>缓存的大小有限，当缓存被用满时，哪些数据应该被清理出去，哪些数据应该被保留？这就需要缓存淘汰策略来决定。常见的缓存策略有三种：先进先出策略FIFO(First In First Out)、最少使用策略LFU(Least Frequently Used)、最近最少使用策略LRU(Least Recently Used)。</p>
+<p>如何用链表实现LRU缓存淘汰策略呢？</p>
+<p>思路：维护一个有序单链表，越靠近链表尾部的节点是越早访问的。当有一个新的数据被访问时，我们从链表头顺序遍历链表。</p>
+<ol>
+<li><p>如果此数据之前已经被缓存在链表中，我们遍历得到这个数据对应的节点，并将其从原来的位置删除，然后再插入到链表的头部。</p>
+</li>
+<li><p>如果此数据没有在链表的缓存中，有可以分为两种情况：</p>
+</li>
+</ol>
+<ul>
+<li><p>如果此时缓存未满，则直接将数据插入到链表的头部。</p>
+</li>
+<li><p>如果此时数据已满，则链表尾节点删除，将新的数据插入到链表的头部。</p>
+</li>
+</ul>
+<p>缓存访问时间复杂度，因为不管缓存有没有满，我们都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为O(n).</p>
+<p>实际上，我们可以引入<strong>散列表</strong>(Hash table)来记录每个数据的位置，将缓存访问的时间复杂度降到O(1)。</p>
+<h3 id="链表思考：">链表思考：</h3><p>如果一个字符串是通过单链表来存储，那该如何来判断一个回文串呢？对应的时间空间复杂度多少？</p>
+<p>思路：</p>
+<ol>
+<li>使用快慢两个指针定位中间节点的位置，快指针步长为2，慢指针步长为1，慢指针遍历的同时对前半部分进行逆序，当快指针遍历到尾节点的时候，慢指针正好是中间节点（这里要区分奇偶的情况）<br>1.1 奇数情况，中点位置不需要矫正<br>1.2 偶数情况，使用偶数定位中点，要确定返回上中位数或下中位数<br>1.2.1 如果是返回上中位数，后半部分串头取next<br>1.2.2 如果是返回下中位数，后半部分串头即是当前节点位置，但前半部分串尾要删除掉当前节点。</li>
+<li>中心点新开一个指针往回走，慢指针继续向前。</li>
+<li>每次遍历判断两个节点是否为回文，当慢指针遍历完整个链表，就可以判断这是回文，否则提前退出。</li>
+<li>恢复现场</li>
+</ol>
+<p>总的时间复杂度指针遍历一遍为O(n),空间复杂度因为只开辟了三个指针，所以为O(1)</p>
 
       
     </div>
@@ -358,7 +356,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
+            <a href="/tags/链表/" rel="tag"># 链表</a>
           
         </div>
       
@@ -371,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/22/ats-enforced-at-the-end-of-2016/" rel="next" title="ATS的强制推行">
-                <i class="fa fa-chevron-left"></i> ATS的强制推行
+              <a href="/2018/08/01/sample-data-structure-stacks/" rel="next" title="面试题-字符对检查">
+                <i class="fa fa-chevron-left"></i> 面试题-字符对检查
               </a>
             
           </div>
@@ -380,10 +378,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/17/OpenCV-Masaic/" rel="prev" title="OpenCV之-实现图片马赛克">
-                OpenCV之-实现图片马赛克 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -414,8 +408,8 @@
 
   
     <div class="comments" id="comments">
-      <div class="ds-thread" data-thread-key="2017/10/12/autolayout-hugging-compression/"
-           data-title="autolayout-hugging-compression" data-url="http://blog.yinuolu.com/2017/10/12/autolayout-hugging-compression/">
+      <div class="ds-thread" data-thread-key="2019/10/28/Data-Structure-And-Algorithm-LinkedList/"
+           data-title="数据结构预算法之:LinkedList" data-url="http://blog.yinuolu.com/2019/10/28/Data-Structure-And-Algorithm-LinkedList/">
       </div>
     </div>
 
@@ -442,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -510,6 +513,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何利用链表实现LRU(Least_Recently_Used)缓存淘汰算法"><span class="nav-number">1.</span> <span class="nav-text">如何利用链表实现LRU(Least Recently Used)缓存淘汰算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链表思考："><span class="nav-number">1.1.</span> <span class="nav-text">链表思考：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
