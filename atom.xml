@@ -5,7 +5,7 @@
   <subtitle><![CDATA[怕什么真理无穷,进一寸有一寸的欢喜]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://blog.yinuolu.com//"/>
-  <updated>2019-10-28T16:57:34.493Z</updated>
+  <updated>2020-10-27T14:19:20.644Z</updated>
   <id>http://blog.yinuolu.com//</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[苹果技术支持]]></title>
+    <link href="http://blog.yinuolu.com/2020/10/27/iOSDeveloperSurport/"/>
+    <id>http://blog.yinuolu.com/2020/10/27/iOSDeveloperSurport/</id>
+    <published>2020-10-27T14:14:02.000Z</published>
+    <updated>2020-10-27T14:19:20.644Z</updated>
+    <content type="html"><![CDATA[<p>如果您在使用我们的产品时遇到任何问题，请随时与我们取得联系，我们将全力为您解决问题。</p>
+<p>请发送邮件与我们联系，我们将及时与您取得联系。</p>
+<p>邮箱地址：yinuolu@163.com</p>
+<p>感谢使用我们的产品~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>如果您在使用我们的产品时遇到任何问题，请随时与我们取得联系，我们将全力为您解决问题。</p>
+<p>请发送邮件与我们联系，我们将及时与您取得联系。</p>
+<p>邮箱地址：yinuolu@163.com</p>
+<p>感谢使用我们的产品~</p>
+]]>
+    </summary>
+    
+      <category term="技术支持" scheme="http://blog.yinuolu.com/tags/%E6%8A%80%E6%9C%AF%E6%94%AF%E6%8C%81/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[数据结构与算法之 - LinkedList]]></title>
